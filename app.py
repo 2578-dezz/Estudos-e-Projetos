@@ -18,7 +18,7 @@ fundo_do_site ="""<style>
 Nome_de_usuario = 'login'
 Utilizadores = {
     
-    "Analista 05": "1234", "Analista 01" : "1234", "Rubão": "1234", "Maria": "1234"
+ 
                 
 }
 
