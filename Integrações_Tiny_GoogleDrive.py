@@ -15,7 +15,7 @@ import os
 ID_PASTA_DRIVE = "15t19SkCGxTKv7InSXkepOBI_ALZc-Vx8" 
 
 # TOKEN DO TINY
-TOKEN_TINY = "085827cb0ceeb1c6358ae8fcd6cb54cea0ee32813bf8ca782831662000ce7417"
+TOKEN_TINY = ""
 
 # Caminho das credenciais
 DIRETORIO_ATUAL = os.path.dirname(os.path.abspath(__file__))
