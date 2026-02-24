@@ -6,7 +6,7 @@ from PIL import Image
 import base64
 
 #Apartir daqui são importações dos scripts que existem na mesma pasta do arquivo streamlit(scripts que dão vida aos botões)
-
+#No meu caso os botes vao atualizar planilhas que existem no Google drive, nos projetos aqui no Git tem o script da consulta Mel e integração que ja vai ajudar a dar uma ideia do que é feito 😂
 import Planilhas_de_separação
 import Planilha_Maria
 import Planilhas_Mel_e_Integração
@@ -26,6 +26,8 @@ st.set_page_config(page_title='Nome que vc preferir', page_icon=icon, layout="ce
 
 
 #Aqui voce define o fundo do site, que no meu caso esta sendo utilizada somente na parte de login
+
+#Se vc quiser dar cores ao site(Cores de texto, cores de fundo e etc), basta criar dentro da mesma pasta, uma subpasta chamada ".streamlit" e dentro dela um arquivo chamado "config.toml" que tem nos projetos logo acima. 
 
 fundo_do_site = """
 <style>
