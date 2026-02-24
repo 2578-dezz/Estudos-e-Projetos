@@ -8,7 +8,7 @@ import time
 # CONFIGURAÇÕES DE TESTE
 # ==============================================================================
 
-# O ID DA PASTA QUE FUNCIONOU (O teu pessoal)
+# O ID DA PASTA(O teu pessoal)
 ID_PASTA_DRIVE = "15t19SkCGxTKv7InSXkepOBI_ALZc-Vx8" 
 
 # DADOS FALSOS PARA TESTE (Simulando o Tiny)
@@ -23,7 +23,7 @@ COLUNA_DATA_INDEX = 1
 COLUNA_QTD_INDEX = 3
 
 def conectar_google():
-    print("☁️ Conectando ao Google...")
+    print(" Conectando ao Google.")
     escopos = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
     try:
         creds = Credentials.from_service_account_file(ARQUIVO_CREDENCIAIS, scopes=escopos)
@@ -35,7 +35,7 @@ def conectar_google():
         return None, None
 
 def listar_planilhas(service, folder_id):
-    print(f"📂 Listando arquivos na pasta {folder_id}...")
+    print(f" Listando arquivos na pasta {folder_id}...")
     try:
         # Filtro completo (Google Sheets + Excel + XLSM)
         query = (
@@ -65,18 +65,18 @@ def rodar_teste_escrita():
     arquivos = listar_planilhas(service, ID_PASTA_DRIVE)
     if not arquivos: return
 
-    print(f"\n🧪 INICIANDO TESTE DE ESCRITA...")
+    print(f"\n INICIANDO TESTE DE ESCRITA")
     print(f"   Vou procurar a aba '{SKU_TESTE}' e a data '{DATA_TESTE}'...")
 
     for arquivo in arquivos:
-        print(f"   📂 Abrindo: {arquivo['name']}")
+        print(f" Abrindo: {arquivo['name']}")
         try:
             # FIX: Usando open_by_key que é o comando padrão compatível
             sh = client.open_by_key(arquivo['id'])
             
             try:
                 ws = sh.worksheet(SKU_TESTE)
-                print(f"      📍 ABA ENCONTRADA!")
+                print(f"ABA ENCONTRADA")
                 
                 # Procura a data na Coluna A
                 datas = ws.col_values(COLUNA_DATA_INDEX)
@@ -89,7 +89,7 @@ def rodar_teste_escrita():
                         break
                 
                 if linha > 0:
-                    print(f"      📅 Data encontrada na linha {linha}. Escrevendo {QTD_TESTE}...")
+                    print(f"   Data encontrada na linha {linha}. Escrevendo {QTD_TESTE}...")
                     
                     # Tenta escrever
                     ws.update_cell(linha, COLUNA_QTD_INDEX, QTD_TESTE)
