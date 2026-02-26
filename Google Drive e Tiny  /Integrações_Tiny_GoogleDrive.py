@@ -118,7 +118,7 @@ def buscar_vendas_tiny(data_alvo):
     else:
         data_str = data_alvo.strftime("%d/%m/%Y")
     
-    print(f"🔄 Consultando Tiny dia {data_str}...")
+    print(f" Consultando Tiny dia {data_str}...")
     
     url_pesquisa = "https://api.tiny.com.br/api2/pedidos.pesquisa.php"
     url_detalhe = "https://api.tiny.com.br/api2/pedido.obter.php"
@@ -192,6 +192,7 @@ def buscar_vendas_tiny(data_alvo):
 
 def rodar_atualizacao():
     hoje = datetime.now()
+    #hoje = datetime (2026, 2, 24) #se quiser simular vendas de alguma data em especifico apenas descomente e comente a variavel de cima
     dia_da_semana = hoje.weekday() 
     
     datas_para_processar = []
@@ -275,5 +276,4 @@ def rodar_atualizacao():
 if __name__ == "__main__":
 
     rodar_atualizacao()
-    #with freeze_time("2026-02-09"):  #Se quiser rodar o freeze com uma data especifica basta alterar aqui para a data necessaria e descomentar.
-        #print({datetime.now()})#
+   
